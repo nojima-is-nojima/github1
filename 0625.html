@@ -2,27 +2,100 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>画像テスト</title>
-    <style media="screen"> 
-        .wa{
-            width: 300px;
-            filter: blur(3px);
-            padding: 40px 30px;
-            padding-left: 300px;
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2,5fr);
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
         }
-        .wi{
-            width: 100%;
-            height: auto;
-            padding: 40px 30px;
-            padding-left: 300px;
+
+        .image-box {
+            text-align: center;
+        }
+
+        .wa {
+            width: 150px;
+            filter: blur(3px);
+        }
+
+        .wi {
+            width: 150px;
+            filter: brightness(300%);
+        }
+
+        .wu {
+            width: 150px;
+            filter: contrast(10%);
+        }
+
+        .we {
+            width: 150px;
+            filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+        }
+
+        p.caption {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+        .wo{
+            width: 150px;
+            filter: grayscale(100%);
+
+        }
+        .wk{
+            width: 150px;
+            filter: invert(100%);
+        }
+        .ws{
+            width: 150px;
+            filter: opacity(10000%);
+        }
+        .wt{
+            width: 150px;
+            filter: saturate(100000%);
         }
     </style>
 </head>
 <body>
-    
-    <img class="wa" src="./syasin/test_bg.png" alt="">
-    <li><a href="./syasin/test_bg.png">画像リンク</a></li>
-    <img class="wi" src="./syasin/test_bg.png" alt="">
+    <div class="container">
+        <div class="image-box">
+            <img class="wa" src="./syasin/test_bg.png" alt="画像1">
+            <p class="caption">ぼかし</p>
+        </div>
+        <div class="image-box">
+            <img class="wi" src="./syasin/test_bg.png" alt="画像2">
+            <p class="caption">これもぼかし画像</p>
+        </div>
+        <div class="image-box">
+            <img class="wu" src="./syasin/test_bg.png" alt="画像3">
+            <p class="caption">明るく</p>
+        </div>
+        <div class="image-box">
+            <img class="we" src="./syasin/test_bg.png" alt="画像4">
+            <p class="caption">明るく</p>
+        </div>
+        <div class="image-box">
+            <img class="wo" src="./syasin/test_bg.png" alt="画像5">
+            <p class="caption">コントラスト低</p>
+        </div>
+        <div class="image-box">
+            <img class="wk" src="./syasin/test_bg.png" alt="画像6">
+            <p class="caption">ドロップシャドウ</p>
+        </div>
+        <div class="image-box">
+            <img class="ws" src="./syasin/test_bg.png" alt="画像7">
+            <p class="caption">コントラスト低</p>
+        </div>
+        <div class="image-box">
+            <img class="wt" src="./syasin/test_bg.png" alt="画像8">
+            <p class="caption">ドロップシャドウ</p>
+        </div>
+    </div>
 </body>
 </html>
