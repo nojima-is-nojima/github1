@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aaa</title>
+    <style>
+        *
+        {
+          padding:0;
+          margin:0;
+        }
+        canvas
+        {
+           background-color: aliceblue;  /*クリアカラー*/
+           display:block;
+           margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <!--キャンバスの設定-->
+    <canvas id="myCanvas" width="480" height="320"></canvas>
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+        let x = canvas.width/2;
+        let y = canvas.height- 30;
+        let dx = 2;
+        let dy = -2;
+        function draw()
+        {
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+
+
+            // ctx.beginPath(); //描画の開始命令
+            // ctx.rect(20,40,50,50);  //四角形(Rectangle)の設定(x,y,width,height)
+            // ctx.fillStyle = "#ff0000";  //カラーコードの指定(RRGBB)
+            // ctx.fill();  //塗りつぶし
+            // ctx.closePath();//描画終了
+
+            ctx.beginPath();
+            ctx.arc(x,y,10,0,Math.PI*2,false);  //円孤(0~360度で円)
+            ctx.fillStyle="green";//色名で指定
+            ctx.fill();
+            ctx.closePath();
+            x += dx;
+            y += dy;
+
+            // ctx.beginPath();
+            // ctx.rect(160,10,100,40);
+            // ctx.strokeStyle ="rgba(0,0,225,0.5)"
+            // ctx.stroke();
+            // ctx.closePath();
+        }
+        setInterval(draw, 10);
+    </script>
+    
+</body>
+</html>
