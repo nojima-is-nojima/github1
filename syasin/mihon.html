@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSSフィルター一覧</title>
+    <style>
+        body {
+            background: #f0f0f0;
+            font-family: sans-serif;
+        }
+        .grid {
+            width: 320px;
+            height: 220px;
+            margin: 8px;
+            float: left;
+            border: solid 1px #ccc;
+            background: #fff;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            text-align: center;
+        }
+        .grid .sample_image {
+            width: 100%;
+            height: 180px;
+            background: url("test_bg.png");
+            background-size: cover;
+            filter: none;
+            transition: 0.7s;
+        }
+        .grid:hover .sample_image {
+            filter: var(--filter);
+        }
+        .grid p {
+            margin: 0;
+            padding: 6px;
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid" style="--filter: blur(5px)">
+        <div class="sample_image"></div>
+        <p>blur/ガウシアンぼかし</p>
+    </div>
+    <div class="grid" style="--filter: brightness(150%)">
+        <div class="sample_image"></div>
+        <p>brightness/　明るさ</p>
+    </div>
+    <div class="grid" style="--filter: contrast(200%)">
+        <div class="sample_image"></div>
+        <p>contrast/コントラスト</p>
+    </div>
+    <div class="grid" style="--filter: grayscale(100%)">
+        <div class="sample_image"></div>
+        <p>grayscale/　モノクロ</p>
+    </div>
+    <div class="grid" style="--filter: sepia(100%)">
+        <div class="sample_image"></div>
+        <p>sepia/ノスタルジック</p>
+    </div>
+    <div class="grid" style="--filter: hue-rotate(90deg)">
+        <div class="sample_image"></div>
+        <p>hue-rotate/色彩</p>
+    </div>
+    <div class="grid" style="--filter: invert(100%)">
+        <div class="sample_image"></div>
+        <p>invert反転</p>
+    </div>
+    <div class="grid" style="--filter: saturate(300%)">
+        <div class="sample_image"></div>
+        <p>saturate/彩度調整</p>
+    </div>
+    <div class="grid" style="--filter: drop-shadow(8px 8px 5px gray)">
+        <div class="sample_image"></div>
+        <p>drop-shadow/ ドロップシャドウ</p>
+    </div>
+    <div class="grid" style="--filter: blur(3px) brightness(120%) saturate(200%)">
+        <div class="sample_image"></div>
+        <p>複合: blur+brightness+saturate</p>
+    </div>
+</body>
+</html>ff
