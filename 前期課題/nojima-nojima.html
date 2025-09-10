@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>しかくが動きます</title>
+    <style>
+        body
+        {
+            background: aliceblue;
+            margin: 0;
+        }
+        #box{
+            width: 50px;
+            height: 50px;
+            background: red;
+            position: absolute;
+            top: 100px;
+            left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+
+    <script>
+    const box = document.getElementById("box");
+    let x = 20; // 初期値
+    let ax = 10; // スピード
+    let y = 100; 
+    let ay = 10; 
+
+    function draw(){
+        x += ax;
+        y += ay;
+
+        // 横方向の壁チェック
+        if (x + box.offsetWidth > window.innerWidth || x < 0){
+            ax = -ax;  //ここで逆向き
+        }     //このifは橋に当たったら跳ね返るやつ
+            
+        if (y + box.offsetHeight > window.innerHeight || y < 0){
+            ay = -ay;
+        }
+
+        box.style.left = x + "px";
+        box.style.top = y + "px";
+
+        requestAnimationFrame(draw);
+    }
+    draw();
+</script>
+    
+</body>
+</html>
